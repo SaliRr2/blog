@@ -25,7 +25,7 @@ SECRET_KEY = 'in1+=oem6x1wd%rsnl2o6u81yi=27#pgaksc3^cu+@k!j%97+5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'SaliRr2.pythonanywhere.com']
 
 
 # Application definition
@@ -37,12 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bloger',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.vk',
+    'bloger',
+    'lol',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-   
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
@@ -93,11 +94,14 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/cybercheats/main/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog4',
-        'HOST': '127.0.0.1',
+        'NAME': 'SaliRr2$blog4',
+        'HOST': 'SaliRr2.mysql.pythonanywhere-services.com',
         'PORT': '3306',
-        'USER': 'root',
+        'USER': 'SaliRr2',
         'PASSWORD': 'ruslan2002',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
